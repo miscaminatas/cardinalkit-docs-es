@@ -1,25 +1,25 @@
 #!/usr/bin/env sh
 
-# abort on errors
+# Abortar con errores
 set -e
 
-# build
+# Construir
 npm run build
 
-# navigate into the build output directory
+# Cambie a la carpeta de compilación
 cd src/.vuepress/dist
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
+# si está implementando en un dominio personalizado
+# echo 'www.sudomio.com' > CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+# Si está implementando en https://<NOMBRE-USUARIO>.github.io
+# git push -f git@github.com:<NOMBRE-USUSARIO>/<NOMBRE-USUARIO>.github.io.git master
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
+# Si está implementando en https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:CardinalKit/cardinalkit-docs.git main:gh-pages
 
 cd -
