@@ -37,64 +37,63 @@ El proyecto de código abierto está disponible [en nuestro Github](https://gith
 ```
 git clone https://github.com/CardinalKit/CardinalKit.git
 ```
-Otra alternativa, es descargar el proyecto como un archivo zip, haciendo clic en "Code" > "Download Zip". Sino funciona, [click acá](https://github.com/CardinalKit/CardinalKit/archive/main.zip). Descarga directamente.y.
+Otra alternativa, es descargar el proyecto como un archivo zip, haciendo clic en "Code" > "Download Zip". Sino funciona, [click acá](https://github.com/CardinalKit/CardinalKit/archive/main.zip). Descarga directamente.
 
 <img src="./images/github.png" alt="drawing" width="750"/>
 
-## 3. Install Dependencies
+## 3. Instalar Dependencias
 
-In your terminal, navigate to the folder where your template project files were downloaded. Change to the 'CardinalKit-Example' subfolder, where the template app is located and run 'pod install' to install dependencies via CocoaPods. This process may take a few minutes.
-
+En su terminal, diríjase a la carpeta donde se descargaron los archivos de su proyecto. Allí cambie a la carpeta 'CardinalKit-Example', donde se encuentra la aplicación y ejecute 'pod install' para instalar dependencias a través de CocoaPods. Este proceso puede tardar unos minutos.
 ```
 cd CardinalKit-Example
 pod install
 ```
 
-## 4. Open the Project in Xcode
+## 4. Abrir el proyecto en Xcode
 
-Now open the CardinalKit project folder in Finder. 
+Ahora abra la carpeta del proyecto CardinalKit en Finder. 
 
-Navigate to the "CardinalKit.xcworkspace" file located in the "CardinalKit-Example" folder. You should see something like this. Open the "CardinalKit.xcworkspace" file. Xcode should automatically launch with the project open. This is a sample app that you will customize to meet your needs. Xcode will start indexing your project and will display Indexing | Processing Files for a few minutes in the top bar. You don't need to wait for this process to complete in order to continue with this guide.
+Encuentre "CardinalKit.xcworkspace" un archivo ubicado en la carpeta "CardinalKit-Example". Debería ver algo como esto. Abrir el archivo "CardinalKit.xcworkspace". Xcode debería debería iniciarse automáticamente con el proyecto abierto. Esta es una aplicación demo que deberá personalizar para satisfacer sus necesidades. Xcode 
+comenzará a indexar su proyecto y mostrará | Procesando archivos durante unos minutos en la barra superior | Indexing. No es necesario esperar a que se complete este proceso para continuar con esta guía.
 
 <img src="./images/folder.png" alt="drawing" width="450"/>
 
-If a pop-up indicating that you opened a file downloaded from online appears, select "Open".
+Si aparece una ventana emergente que indica que abrió un archivo descargado on line, seleccione "Abrir".
 
 ::: tip
-At some point during this process, the project may ask to request a part of your keychain with a chain of intrusive popups. In this case, type in your password and click "Always Allow". Xcode and this project is entirely local so this is safe.
+En algún momento durante este proceso, el proyecto puede solicitar una parte de su "keychain" con una cadena de ventanas emergentes intrusivas. En este caso, escriba su contraseña y haga clic en "Permitir siempre" ("Always Allow"). Xcode y este proyecto son completamente locales, por lo que es seguro.
 :::
 
 <img src="./images/downloaded.png" alt="drawing" width="450"/>
 
-## 5. Configure the Project
+## 5.Configurar Proyecto
 
-Click on the main root project in the sidebar and change the iOS bundle ID and team to match your project. 
+Haga clic en el proyecto raíz principal en la barra lateral y cambie el ID y el equipo del paquete de iOS para que coincida con su proyecto. 
 
-Remember the bundle ID for later since it will be needed to connect your database to the app. It should be of the format "com.[TEAM-NAME].[PROJECT-NAME]". Write down this bundle ID for later as it will be crucial in setting up the database component of the app.
+Recuerde el ID del paquete para más adelante, ya que será necesario para conectar su base de datos a la aplicación. Debe ser del formato "com.[TEAM-NAME].[PROJECT-NAME]". Anote este ID de paquete para más adelante, ya que será crucial para configurar el componente de base de datos de la aplicación..
 
 <img src="./images/bundle.png" alt="drawing" width="450"/>
 
 ::: tip
-If you get a status message that states "Unable to log in with account '[YOUR EMAIL]'" or "No profiles for '[YOUR BUNDLE ID]' were found", don't worry as your app should still compile and you should continue with this guide.
+Si recibe un mensaje de estado que dice "No se puede iniciar sesión con la cuenta'[YOUR EMAIL]'" o "No se encontraron perfiles para '[YOUR BUNDLE ID]'", no se preocupe, ya que su aplicación aún debe compilarse y debe continuar con esta guía.
 :::
 
-Once that is complete, your "Signing and Capabilities" page should look like this (with your team and project names):
+Una vez que esté completo, su página "Firma y capacidades" ("Signing and Capabilities") debería verse así (con los nombres de su equipo (Team) y proyecto (Bundle Identifier):
 
 <img src="./images/updated_bundle.png" alt="drawing" width="450"/><br />
 
-## 6. Wait for Reindexing to Complete
+## 6. Esperea a que se complete la reindexación
 
-Xcode takes a while to open a project. Wait until Xcode is finished indexing the project. At the top of Xcode, there will be light blue progress bar showing this. Once it is complete, and no red errors pop up, we can run the project. This can take anywhere from 5 to 10 minutes.
+Xcode tarda un tiempo en abrir un proyecto. Espere hasta que Xcode termine de indexar el proyecto. En la parte superior de Xcode, habrá una barra de progreso de "color azul" claro que lo indica. Una vez que se completa y no aparecen errores en "color rojo", podemos ejecutar el proyecto. Esto puede tomar de 5 a 10 minutos.
 
 <img src="./images/indexing.png" alt="drawing" width="750"/>
 
-## 7. Test Your App
+## 7. Prueba tu App
 
-Specify the target for deployment. Select either your phone (if it is plugged in) or pick a device to simulate (we recommend iPhone 11 and iOS 14 or greater). Press the "Play" button, shown below to run the app in the simulator. The first time you build the app, it will take 5 to 10 minutes due to it having to load all of the frameworks for the first time.
+Especifique el destino de la implementación. Seleccione su teléfono (si está enchufado) o elija un dispositivo para simular (recomendamos iPhone 11 e iOS 14 o superior). Presione el botón "Play", que se muestra a continuación, para ejecutar la aplicación en el simulador. La primera vez que crea la aplicación, tardará de 5 a 10 minutos debido a que tiene que cargar todos los "Frameworks" por primera vez.
 
-When the simulator boots up and opens up the app, you may be faced with a white screen for a few seconds to a minute. This is normal for the simulator on the first run of the app. Your project may show several warnings indicated by a yellow triangle "⚠️" but that is fine.
+Cuando el simulador se inicia y abre la aplicación, es posible que se encuentre con una pantalla blanca durante unos segundos o un minuto. Esto es normal para el simulador en la primera ejecución de la aplicación. Su proyecto puede mostrar varias advertencias indicadas por un triángulo amarillo "⚠️" pero eso está bien.
 
 <img src="./images/set_target.png" alt="drawing" width="750"/>
 
-If your app is now up and running, continue onto the <a href="/cardinalkit-docs/1-cardinalkit-app/2-setup.html">next section</a> to set up the cloud infrastructure for your app.
-Footer.
+Si su aplicación ya está en funcionamiento, continúe con la <a href="/cardinalkit-docs-es/1-cardinalkit-app/2-config.html">siguiente sección</a> para configurar la infraestructura de la nube para su aplicación.
